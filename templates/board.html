@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- MENU -->
+<div class="container text-center mb-2">
+<strong><span id="message"></span></strong>
+</div>
+<div class="container text-center mb-2">
+	<button id="choose-game" class="game-menu">Choose a Game</button>
+	<button id="reset-game" class="game-menu">Reset Game</button>	
+	<button id="p1" class="game-menu-players">Player1</button>
+	<button id="p2" class="game-menu-players play">Player2</button>
+</div>
+<!-- FORM -->
+
+<div id="game-settings" class="text-center closed mb-2">
+	<form action="/" method="POST">
+		<strong>
+			<p>What kind of game should we play?</p>
+		</strong>
+		<!-- <div class="custom-control custom-radio mb-3">
+			<input type="radio" class="custom-control-input" value="game1" id="game1" name="radio-game" required>
+			<label class="custom-control-label" for="game1">Game1</label>
+			<div class="invalid-feedback">More example invalid feedback text</div>
+		</div> -->
+		<div class="custom-control custom-radio mb-3">
+			<input type="radio" class="custom-control-input" value="game2" id="game2" name="radio-game" required>
+			<label class="custom-control-label" for="game2">Block!</label>
+			<div class="invalid-feedback">More example invalid feedback text</div>
+		</div>
+		<div class="custom-control custom-radio mb-3">
+			<input type="radio" class="custom-control-input" value="game3" id="game3" name="radio-game" required>
+			<label class="custom-control-label" for="game3">Paint!</label>
+			<div class="invalid-feedback">More example invalid feedback text</div>
+		</div>
+		<div class="custom-control custom-radio mb-3">
+			<input type="radio" class="custom-control-input" value="game1" id="game1" name="radio-game" required>
+			<label class="custom-control-label" for="game1">Conquer!</label>
+			<div class="invalid-feedback">More example invalid feedback text</div>
+		</div>
+		<p id="game-description" class="mt-4">
+			DESCRIPTION
+		</p>
+		<strong>
+			<p>Choose board size</p>
+		</strong>
+		<div class="mb-1">
+			<small>rows</small>
+			<select name="board-rows" id="board-rows" class="custom-select">
+				{% for i in range(min_row, max_row) %}
+				<option value="{{ i }}">{{ i }}</option>
+				{% endfor %}
+			</select>
+			<small>columns</small>
+			<select name="board-cols" id="board-cols" class="custom-select">
+				{% for i in range(min_col, max_col) %}
+				<option value="{{ i }}">{{ i }}</option>
+				{% endfor %}
+			</select>
+		</div>
+		<button class="btn btn-primary mt-4" type="submit">Start New Game!</button>
+	</form>
+</div>
+<!-- BOARD -->
+<div id="board" class="container">
+	<div class="text-center">
+		<div class="">
+			{% for r in range(rows) %}
+			<div class="row justify-content-center">
+				<div class="d-block justify-content-center">
+					{% for c in range(cols) %}
+					<button id="{{ r }}_{{ c }}"" type=" button"
+						class="btn btn-outline-primary game-btn mb-1 text-center">A</button>
+					{% endfor %}
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block code %}
+
+
+var rows_num = {{ rows }}
+var cols_num = {{ cols }}
+var game_num = {{ game_num }};
+
+{% endblock %}

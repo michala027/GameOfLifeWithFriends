@@ -1,0 +1,126 @@
+html {
+    overflow-y: scroll;
+    overflow-x:scroll;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+#header {
+    margin: auto;
+}
+
+
+.game-btn {
+    height: 30px;
+    width: 30px;
+    font-size: 0.6em;
+}
+
+
+.disabled {
+    background-color: plum;
+}
+
+.custom-control {
+    display: inline;
+}
+
+#board-rows {
+    width: 60px;
+}
+
+#board-cols {
+    width: 60px;
+    float: none;
+}
+
+
+.nav-item {
+    width: 50%;
+    background: blue;
+  }
+
+#player-one-display {
+   background-color: #88d2de;
+}
+  
+#player-two-display {
+    background-color: #ffc1e3;
+}
+
+button {
+    text-align: center;
+    outline: none;
+}
+
+.btn-danger.disabled, .btn-danger:disabled {
+    color: #fff;
+    background-color: #f888c5;
+    border-color: #f888c5;
+
+}
+
+.game-menu-players {
+    border: none;
+    background: none;
+    transition: all 0.3s;
+}
+
+.game-menu {
+    border: none;
+    background: none;
+    transition: all 0.3s;
+
+}
+
+.game-menu:hover{
+    background-color: #88d2de;
+    color: white;
+}
+
+.closed, .open {
+    transition: max-height 0.15s ease-out;
+    overflow: hidden;
+}
+.open {    
+    max-height: 500px;
+    transition: max-height 0.25s ease-in;
+    padding: 10px 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.closed{
+    max-height: 0;    
+}
+
+button:focus {outline:0;}
+
+#game-settings {
+    margin: 0 auto;
+    width: 650px;
+    min-width: 550px;
+    background-color: #ffe4f3;
+    border-radius: 3%; 
+}
+
+#p1.play{
+    background-color: #88d2de;
+}
+
+#p2.play{
+    background-color:  #ffc1e3;
+}
+
+#message {
+    display: inline-block;
+    width: 40%;
+}
+
+#game-name {
+    border: none;
+    background: none;
+
+}
